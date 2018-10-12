@@ -107,7 +107,7 @@ export default class LiveTour extends React.Component {
   }
 
   fetchTourDef() {
-    fetch(asset(this.props.tourURI).uri)
+    fetch(this.props.tourURI)
       .then(res => {
         if (res.status >= 400) {
           let errMsg = 'Could not load file: '+ this.props.tourURI + ", got server response " + res.status;

@@ -38,7 +38,7 @@ export default class LTPhotoPano extends React.Component {
   render() {
     let panosrc = null;
     if (Object.prototype.toString.call(this.props.src) === '[object String]') {
-      panosrc = asset(this.props.src);
+      panosrc = this.props.src;
     } else if (Object.prototype.toString.call(this.props.src) === '[object Array]') {
       panosrc = [
         asset(this.props.src[0]),
@@ -52,7 +52,7 @@ export default class LTPhotoPano extends React.Component {
 
     return (
       <Pano 
-        source={panosrc}
+        source={{uri:  panosrc}}
         onLoadEnd={this.props.onLoadEnd}
         style={{ 
           /* transform: [{rotateY: this.props.panoRotY}], */
