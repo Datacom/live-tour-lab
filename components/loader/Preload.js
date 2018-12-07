@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  asset,
-  Image,
-} from 'react-vr';
-
+import { asset, Image } from 'react-vr';
 
 export default class Preload extends React.Component {
   static defaultProps = {
@@ -12,21 +8,19 @@ export default class Preload extends React.Component {
 
   constructor(props) {
     super();
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
-    return( 
-      <Image 
+    return (
+      <Image
         style={{
           width: 0,
           height: 0,
           opacity: 0,
         }}
-        source={asset(this.props.src)}
+        source={{ uri: this.props.src }}
       />
     );
   }
 }
-
